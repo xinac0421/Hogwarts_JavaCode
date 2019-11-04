@@ -24,7 +24,7 @@ public class App extends BasePage{
         driver.manage().window().maximize();
         driver.manage().addCookie(new Cookie("wwrtx.refid","35319648552006584"));
         driver.manage().addCookie(new Cookie("wwrtx.sid",
-                "Ir-IFBdTy8bBKF_maw8HdqeTRpVkHu9BD42OJzqlPfqM2jC1X-iBlRZs51NGwOg4"));
+                "Ir-IFBdTy8bBKF_maw8HdtZUCIRsBo_QVt953tDONNrCovDro4FvNvS7lRJS_MKi"));
         findElement(By.linkText("企业登录")).click();
 
     }
@@ -48,6 +48,12 @@ public class App extends BasePage{
     public DepartmentPage toDepartment(){  // 进入通信录界面
         findElement(By.linkText("通讯录")).click();
         return new DepartmentPage();
+    }
+
+    public MaterialPage toMaterial(){  // 进入素材库界面
+        findElement(By.linkText("管理工具")).click();
+        findElement(By.cssSelector(".ww_icon_AppMaterialBig")).click();
+        return new MaterialPage();
     }
 
 

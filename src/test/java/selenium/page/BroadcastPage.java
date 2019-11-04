@@ -53,9 +53,9 @@ public class BroadcastPage extends BasePage {
     }
 
     public List<String> getSendedMsg() throws InterruptedException {
-        if (isHasElement(By.cssSelector("ww_tip success"))){
+        if (isHasElement(By.cssSelector(".ww_tip success"))){
             for (int i = 0; i < 5; i++) {
-                if (findElement(By.cssSelector("ww_tip success"),0).isDisplayed()){
+                if (findElement(By.cssSelector(".ww_tip success"),0).isDisplayed()){
                     Thread.sleep(1000);
                 }else {
                     break;
