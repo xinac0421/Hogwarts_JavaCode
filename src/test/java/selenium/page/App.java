@@ -22,9 +22,9 @@ public class App extends BasePage{
         startChrome();
         driver.get(baseUrl);
         driver.manage().window().maximize();
-        driver.manage().addCookie(new Cookie("wwrtx.refid","35319648552006584"));
+        driver.manage().addCookie(new Cookie("wwrtx.refid","请改成自己的"));
         driver.manage().addCookie(new Cookie("wwrtx.sid",
-                "Ir-IFBdTy8bBKF_maw8HdtZUCIRsBo_QVt953tDONNrCovDro4FvNvS7lRJS_MKi"));
+                "请改成自己的"));
         findElement(By.linkText("企业登录")).click();
 
     }

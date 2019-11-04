@@ -17,6 +17,9 @@ import static java.io.File.separator;
 
 public class TestMaterial {
     private static App app;
+    private static final String pic_path=System.getProperty("user.dir") + separator +
+            "src"+ separator +"test"+ separator + "java" + separator +
+            "selenium"+ separator + "testcase"+ separator +"test.jpg";
 
     @BeforeClass
     public static void setUp() throws Exception{
@@ -27,10 +30,15 @@ public class TestMaterial {
 
     @Test
     public void uploadPic() {  // 上传图片
-        String pic_path=System.getProperty("user.dir") + separator +
-                "src"+ separator +"test"+ separator + "java" + separator +
-                "selenium"+ separator + "testcase"+ separator +"test.jpg";
         app.toMaterial().uploadPic(pic_path);
+    }
+
+    @Test
+    public void addPicAndText() {  // 添加封面图
+        String title="测试标题1"+System.currentTimeMillis();
+        String body="Hogwarts School of Witchcraft and Wizardry";
+        app.toMaterial().addPicAndText(title, body, pic_path);
+
     }
 
 
