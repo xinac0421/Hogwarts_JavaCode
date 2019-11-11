@@ -17,8 +17,8 @@ public class App extends BasePage {
         return new SearchPage();
     }
 
-    public static StockPage stockPage() {
-        //findElementAndClick();
+    public static StockPage toStock() {
+        findElementAndClick(By.xpath("//*[contains(@resource-id,'tab_name') and @text='自选']"));
         return new StockPage();
     }
 

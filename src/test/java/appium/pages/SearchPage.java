@@ -23,8 +23,13 @@ public class SearchPage extends BasePage{
         return Float.valueOf(price);
     }
 
-    public SearchPage cancel(){  // 从结果页点击取消按钮，会返回到首页
+    public SearchPage cancel(){  // 从结果页点击取消按钮，会返回上一个页面
         findElementAndClick(By.id("com.xueqiu.android:id/action_close"));
+        return this;
+    }
+
+    public SearchPage select(){  // 点击加入自选按钮
+        findElementAndClick(By.id("com.xueqiu.android:id/follow_btn"));
         return this;
     }
 }

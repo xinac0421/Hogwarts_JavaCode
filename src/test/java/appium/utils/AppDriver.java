@@ -1,6 +1,7 @@
 package appium.utils;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -38,7 +39,7 @@ public class AppDriver {
         }
         assert url != null;
         AndroidDriver driver = new AndroidDriver(url, desiredCapabilities);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         return driver;
     }
 
