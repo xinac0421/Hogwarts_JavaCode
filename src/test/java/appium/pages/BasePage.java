@@ -75,12 +75,22 @@ public class BasePage {
 
         for (String key : alertBoxs.keySet()){
             if(xml.contains(key)){
-                driver.findElement(alertBoxs.get(key)).click();
+                if(key.equals("com.xueqiu.android:id/snb_tip_text")){
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (findElement(alertBoxs.get(key)).isDisplayed()){
+                        Dimension size=driver.manage().window().getSize();
+                        new TouchAction<>(driver).tap(PointOption.point(size.width/2,size.width/2)).perform();
+                    }
+                }else {
+                    driver.findElement(alertBoxs.get(key)).click();
+                }
+
             }
-            if(key.equals("com.xueqiu.android:id/snb_tip_text")){
-                Dimension size=driver.manage().window().getSize();
-                new TouchAction<>(driver).tap(PointOption.point(size.width/2,size.width/2)).perform();
-            }
+
 
         }
 
