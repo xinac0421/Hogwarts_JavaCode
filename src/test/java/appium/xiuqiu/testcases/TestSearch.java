@@ -1,11 +1,10 @@
-package appium.testcases;
+package appium.xiuqiu.testcases;
 
-import appium.pages.App;
-import appium.pages.SearchPage;
+import appium.xiuqiu.pages.App;
+import appium.xiuqiu.pages.SearchPage;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.By;
 
 import java.util.Arrays;
 import java.util.Collection;

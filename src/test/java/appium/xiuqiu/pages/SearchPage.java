@@ -1,4 +1,4 @@
-package appium.pages;
+package appium.xiuqiu.pages;
 
 import org.openqa.selenium.By;
 
