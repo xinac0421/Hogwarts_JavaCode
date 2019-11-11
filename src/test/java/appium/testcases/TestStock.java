@@ -23,7 +23,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
  **/
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestStock {
+class TestStock {
     private static StockPage stockPage;
 
     @BeforeAll
@@ -53,12 +53,12 @@ public class TestStock {
     static Stream<Arguments> stockData(){
         return Stream.of(
                 arguments("pdd","拼多多"),
-                arguments("xiaomi","小米")
+                arguments("xiaomi","小米集团-W")
         );
     }
 
     @AfterAll
-    public static void tearDown() throws Exception {
+    static void tearDown() throws Exception {
         Thread.sleep(5000);
         App.quit();
     }
