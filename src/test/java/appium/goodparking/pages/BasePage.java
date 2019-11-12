@@ -134,7 +134,61 @@ public class BasePage {
                 "new UiSelector().text(\"%s\"));", scrollElementById, toElementText);
         driver.findElementByAndroidUIAutomator( // 滚动(android)
                 formatScrollString);
+    }
 
+    /**
+     * 点击屏幕上的一个点
+     * @param xP  x点的比例（0-1）
+     * @param yP  y点的比例（0-1）
+     */
+    public static void clickPoint(Double xP, Double yP){
+        Dimension size = driver.manage().window().getSize();
+        TouchAction point = new TouchAction(driver);
+        point.tap(PointOption.point((int)(size.width*xP), (int)(size.height*yP))).release();
+        point.perform();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 设备的回退功能
+     */
+    public static void backDevice(){
+        driver.navigate().back();
+    }
+
+
+    /**
+     * 水平滚动到具体元素上(多用于单个Frame的移动)
+     * @param scrollElementById 可滚动条的元素(ID定位)
+     * @param toElementText 需要滚动到那个元素(text)
+     */
+    public static void scrollToElementForHorizo​​ntal(String scrollElementById, String toElementText){
+        String formatScrollString = String.format("new UiScrollable(new UiSelector().resourceId(\"%s\"))." +
+                "setAsHorizontalList().scrollIntoView(" +
+                "new UiSelector().text(\"%s\"));", scrollElementById, toElementText);
+        driver.findElementByAndroidUIAutomator( // 滚动(android)
+                formatScrollString);
+    }
+
+    /**
+     * 车牌号内置键盘操作
+     * @param plateNo  车牌号
+     */
+    public static void keyBoardInPut(String plateNo){
+        for (int i = 0; i < plateNo.length(); i++) {
+            String subStr = plateNo.substring(i, i+1);
+            String nb_xpath = String.format("//*[@text='%s']", subStr);
+            findElementAndClick(By.xpath(nb_xpath));
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
