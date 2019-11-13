@@ -37,7 +37,7 @@ public class BasePage {
     }
 
     public void startChrome(){
-        System.setProperty("webdriver.chrome.driver", "tools/ChromeDriver/78.0.3904.70/chromedriver");
+        System.setProperty("webdriver.chrome.driver", this.getClass().getResource("/ChromeDriver/78.0.3904.70/chromedriver").getPath());
         ChromeOptions chromeOptions=new ChromeOptions();
         chromeOptions.setCapability("pageLoadStrategy","none");
         driver = new ChromeDriver(chromeOptions);

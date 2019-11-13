@@ -6,6 +6,8 @@ import static java.io.File.separator;
 
 import selenium.page.App;
 
+import java.net.URL;
+
 
 public class TestWeWork {
     private static App app;
@@ -34,9 +36,7 @@ public class TestWeWork {
 
     @Test
     public void importFromFile(){
-        String file_path=System.getProperty("user.dir") + separator +
-                "src"+ separator +"test"+ separator + "java" + separator +
-                "selenium"+ separator + "testcase"+ separator +"通讯录批量导入模板.xlsx";
+        String file_path=this.getClass().getResource("/selenium/通讯录批量导入模板.xlsx").getPath();
         app.toContact().importFromFile(file_path);
     }
 

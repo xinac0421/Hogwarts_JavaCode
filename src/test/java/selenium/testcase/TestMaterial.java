@@ -17,9 +17,7 @@ import static java.io.File.separator;
 
 public class TestMaterial {
     private static App app;
-    private static final String pic_path=System.getProperty("user.dir") + separator +
-            "src"+ separator +"test"+ separator + "java" + separator +
-            "selenium"+ separator + "testcase"+ separator +"test.jpg";
+    private static final String pic_path=TestMaterial.class.getResource("/selenium/test.jpg").getPath();
 
     @BeforeClass
     public static void setUp() throws Exception{

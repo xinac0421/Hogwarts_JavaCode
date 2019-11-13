@@ -30,7 +30,8 @@ public class AppDriver {
         desiredCapabilities.setCapability("resetKeyboard",true);
 
         // 设置自动到目录下查找相对应的chromedriver版本
-        desiredCapabilities.setCapability("chromedriverExecutableDir", "/Users/wangxin/Documents/TOOLS/ChromeDriver/");
+
+        desiredCapabilities.setCapability("chromedriverExecutableDir", AndroidDriver.class.getResource("/ChromeDriver").getPath());
         URL url = null;
         try {
             url = new URL("http://localhost:4723/wd/hub");
