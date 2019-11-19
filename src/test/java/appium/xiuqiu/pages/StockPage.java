@@ -16,11 +16,7 @@ import java.util.List;
 
 public class StockPage extends BasePage{
     public StockPage deleteAll() {  // 若有数据，则先取消所有关注
-        findElementAndClick(By.id("com.xueqiu.android:id/edit_group"));
-        findElementAndClick(By.id("com.xueqiu.android:id/check_all"));
-        findElementAndClick(By.id("com.xueqiu.android:id/cancel_follow"));
-        findElementAndClick(By.id("com.xueqiu.android:id/md_buttonDefaultPositive"));
-        findElementAndClick(By.id("com.xueqiu.android:id/action_close"));
+        parseSteps();
         return this;
     }
 
@@ -35,12 +31,12 @@ public class StockPage extends BasePage{
     }
 
     public StockPage addDefaultSelectedStocks(){ // 加入自选股
-        findElementAndClick(By.id("com.xueqiu.android:id/add_to_portfolio_stock"));
+        parseSteps();
         return this;
     }
 
     public SearchPage toSearch(){
-        findElementAndClick(By.id("com.xueqiu.android:id/action_search"));
+        parseSteps();
         return new SearchPage();
     }
 

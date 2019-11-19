@@ -28,8 +28,8 @@ class TestStock {
 
     @BeforeAll
     static void beroreAll() {
-        App.startApp();
-        stockPage=App.toStock();
+        App.getInstance().startApp();
+        stockPage=App.getInstance().toStock();
     }
 
     @Test
@@ -60,6 +60,6 @@ class TestStock {
     @AfterAll
     static void tearDown() throws Exception {
         Thread.sleep(5000);
-        App.quit();
+        App.getInstance().quit();
     }
 }

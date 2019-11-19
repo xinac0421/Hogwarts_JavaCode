@@ -1,0 +1,29 @@
+methods:
+  search:
+    steps:
+      - element: search_input_text
+        send: ${keyword}
+      - id: name
+
+  getText:
+    steps:
+      - id: current_price
+        get: text
+        dump: price
+
+  cancel:
+    steps:
+      - id: action_close
+
+  select:
+    steps:
+      - id: follow_btn
+
+
+
+elements:
+  search_input_text:
+    element:
+      - id: search_input_text
+        os: android
+

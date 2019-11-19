@@ -11,14 +11,21 @@ import org.openqa.selenium.By;
  **/
 
 public class App extends BasePage {
+    private static App app;
+    public static App getInstance() {
+        if (app==null) {
+            app=new App();
+        }
+        return app;
+    }
 
-    public static SearchPage toSearch() {
-        findElementAndClick(By.id("com.xueqiu.android:id/tv_search"));
+    public SearchPage toSearch() {
+        parseSteps();
         return new SearchPage();
     }
 
-    public static StockPage toStock() {
-        findElementAndClick(By.xpath("//*[contains(@resource-id,'tab_name') and @text='自选']"));
+    public StockPage toStock() {
+        parseSteps();
         return new StockPage();
     }
 

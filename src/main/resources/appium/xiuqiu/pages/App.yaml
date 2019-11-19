@@ -1,0 +1,9 @@
+methods:
+  toSearch:
+    steps:
+      - id: tv_search
+
+  toStock:
+    steps:
+      - xpath: "//*[contains(@resource-id,'tab_name') and @text='自选']"
+
