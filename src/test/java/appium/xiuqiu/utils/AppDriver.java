@@ -22,11 +22,13 @@ public class AppDriver {
         desiredCapabilities.setCapability("appPackage", "com.xueqiu.android");
         desiredCapabilities.setCapability("appActivity", ".view.WelcomeActivityAlias");
         desiredCapabilities.setCapability("platformName", "android");
-        desiredCapabilities.setCapability("deviceName", "P4M0215528000176");
+        desiredCapabilities.setCapability("deviceName", System.getenv("deviceName"));  // 配合jenkins的自动化测试
+        //desiredCapabilities.setCapability("deviceName", "P4M0215528000176");
         desiredCapabilities.setCapability("automationName", "uiautomator2");
         desiredCapabilities.setCapability("noReset", true);
         desiredCapabilities.setCapability("unicodeKeyboard", true);
         desiredCapabilities.setCapability("resetKeyboard",true);
+        desiredCapabilities.setCapability("dontStopAppOnReset", true);
 
         // 设置自动到目录下查找相对应的chromedriver版本
         desiredCapabilities.setCapability("chromedriverExecutableDir", AndroidDriver.class.getResource("/ChromeDriver").getPath());

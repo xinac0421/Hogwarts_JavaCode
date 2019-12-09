@@ -22,7 +22,8 @@ public class AppDriver {
         desiredCapabilities.setCapability("appPackage", "com.innotek.goodparking");
         desiredCapabilities.setCapability("appActivity", ".activity.SplashActivity");
         desiredCapabilities.setCapability("platformName", "android");
-        desiredCapabilities.setCapability("deviceName", "HUAWEI_MT7_TL00");
+        desiredCapabilities.setCapability("deviceName", System.getenv("deviceName"));  // 配合jenkins的自动化测试
+        //desiredCapabilities.setCapability("deviceName", "HUAWEI_MT7_TL00");
         desiredCapabilities.setCapability("udid", "P4M0215528000176");
         desiredCapabilities.setCapability("automationName", "uiautomator2");
         desiredCapabilities.setCapability("noReset", true);
